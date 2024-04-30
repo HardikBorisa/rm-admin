@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>List of Offers</h2>
+    <a class="btn btn-primary"  [routerLink]="['/offer', 'create']">Create Offer <span class="sr-only"></span></a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let offer of offers">
+          <td>{{ offer.id }}</td>
+          <td>{{ offer.title }}</td>
+          <td>{{ offer.type }}</td>
+          <td><a class="btn btn-primary btn-sm"  [routerLink]="['/offer', 'edit',offer.id]">Edit</a>&nbsp;
+             <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmationModal" (click)="deleteItem(offer.id)">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
